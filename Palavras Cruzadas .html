@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Palavras Cruzadas</title>
+
+    <style>
+        .header {
+            width: 100%;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .cruzadinha .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .quadrado {
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgb(36, 32, 32);
+            border-radius: 5px;
+            margin-top: 1%;
+            margin-left: 1%;
+        }
+
+        .memoriaMassa {
+            display: flex;
+            align-items: center;
+            margin-right: 149px;
+        }
+
+        .text8 {
+            padding: 1px;
+        }
+
+        .dma {
+            display: flex;
+            align-items: center;
+            margin-left: 7%;
+        }
+
+        .text9 {
+            padding: 2px;
+        }
+
+        .dataBus {
+            display: flex;
+            align-items: center;
+        }
+
+        .text12 {
+            margin-right: 2px;
+            margin-left: 137px;
+        }
+
+        .dualQuadCore {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .text14 {
+            padding: 1px;
+        }
+
+        .dica {
+            text-align: center;
+        }
+
+        .texto {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1> Palavras Cruzadas </h1>
+            <h3>Componentes de Computadores</h3>
+        </div>
+    </div>
+
+    <div class="cruzadinha">
+        <div class="container">
+            <div class="jogo">
+                <div class="dualQuadCore">
+                    <div class="text14">14</div>
+
+                    <div class="dma">
+                        <div class="text9">9</div>
+                        <input id="input_DMA_D" class="quadrado">
+                        <input id="input_DMA_M" class="quadrado">
+                        <input id="input_DMA_A" class="quadrado">
+                    </div>
+
+                    <input id="input_dualQuadCore_U" class="quadrado">
+
+                    <div class="dataBus">
+                        <div class="text12">12</div>
+                        <input id="input_DATABUS_D" class="quadrado">
+                        <input id="input_DATABUS_A" class="quadrado">
+                        <input id="input_DATABUS_T" class="quadrado">
+                        <input id="input_DATABUS_A2" class="quadrado">
+                        <input id="input_DATABUS_B" class="quadrado">
+                        <input id="input_DATABUS_U" class="quadrado">
+                        <input id="input_DATABUS_S" class="quadrado">
+
+                    </div>
+                    <input id="input_dualQuadCore_L" class="quadrado">
+
+                    <div class="memoriaMassa">
+                        <div class="text8">8</div>
+                        <input id="input_memMassa_M1" class="quadrado">
+                        <input id="input_memMassa_E1" class="quadrado">
+                        <input id="input_memMassa_M2" class="quadrado">
+                        <input id="input_memMassa_O" class="quadrado">
+                        <input id="input_memMassa_R" class="quadrado">
+                        <input id="input_memMassa_I" class="quadrado">
+                        <input id="input_memMassa_A" class="quadrado">
+
+                        <input id="input_memMassa_D" class="quadrado">
+                        <input id="input_memMassa_E2" class="quadrado">
+
+                        <input id="input_memMassa_M3" class="quadrado">
+                        <input id="input_memMassa_A2" class="quadrado">
+                        <input id="input_memMassa_S" class="quadrado">
+                        <input id="input_memMassa_S2" class="quadrado">
+                        <input id="input_memMassa_A3" class="quadrado">
+                    </div>
+
+                    <input id="input_dualQuadCore_Q" class="quadrado">
+                    <input id="input_dualQuadCore_U2" class="quadrado">
+                    <input id="input_dualQuadCore_A2" class="quadrado">
+                    <input id="input_dualQuadCore_D2" class="quadrado">
+
+                    <input id="input_dualQuadCore_C" class="quadrado">
+                    <input id="input_dualQuadCore_O" class="quadrado">
+                    <input id="input_dualQuadCore_R" class="quadrado">
+                    <input id="input_dualQuadCore_E2" class="quadrado">
+                    <!-- Dual e Quad Core -->
+                    
+                    <br><br>
+                    <button onclick="validar()">Validar</button>
+                </div>
+            </div>
+
+            <div class="texto">
+                <h3 class="dica">Dicas</h3>
+                1. Sigla do item do computador responsável por calcular e realizar tarefas <br>
+                2. Sigla do circuito combinatório responsável pela execução de operações <br>
+                3. São intermediários necessários para acessar a RAM <br>
+                4. Sigla do espaço de armazenamento temporário de trabalho <br>
+                5. Sigla que serve para diferenciar uma memória que só pode ser lida <br>
+                6. Chip de memória de computador que mantém seus dados quando a energia é desligada <br>
+                7. Tecnologia de armazenamento de dados que usa uma memória não volátil <br>
+                8. Tem como função armazenar grandes quantidades de informações. <br>
+                9. Método que permite que um dispositivo de entrada e saída envie ou receba dados <br>
+                10. Sigla que é usada para selecionar um dos circuitos integrados entre vários <br>
+                11. Barramento de computador usado para especificar um endereço físico na memória <br>
+                12. Barramento de computador usado para transmitir dados entre componentes <br>
+                13. Processadores 13ª Geração oferecem uma arquitetura altamente flexível <br>
+                14. Processadores com 2 e 4 núcleos são chamados de <br>
+                15. Recebe e executa todas as instruções, como uma ordem do que será feito por vez <br>
+                16. Ela tem o objetivo de guardar dados, informações e processos temporários acessados com frequência e
+                assim agilizar o processo de uso no momento em que são requisitados pelo usuário. <br>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function validar() {
+
+        // Variáveis //
+
+        // 14 - "Dual e Quad Core"
+            var validacao_14 = (
+            //input_dualQuadCore_D.value == "d" &&
+            input_dualQuadCore_U.value == "u" &&
+            //input_dualQuadCore_A.value == "a" &&
+            input_dualQuadCore_L.value == "l" &&
+
+            //input_dualQuadCore_E.value == "e" &&
+            input_memMassa_E2.value == "e" &&
+
+            input_dualQuadCore_Q.value == "q" &&
+            input_dualQuadCore_U2.value == "u" &&
+            input_dualQuadCore_A2.value == "a" &&
+            input_dualQuadCore_D2.value == "d" &&
+
+            input_dualQuadCore_C.value == "c" &&
+            input_dualQuadCore_O.value == "o" &&
+            input_dualQuadCore_R.value == "r" &&
+            input_dualQuadCore_E2.value == "e"
+            )
+
+            // 8 - "MEMORIA DE MASSA"
+            var validacao_8 = (
+            input_memMassa_M1.value == "m" &&
+            input_memMassa_E1.value == "e" &&
+            input_memMassa_M2.value == "m" &&
+            input_memMassa_O.value == "o" &&
+            input_memMassa_R.value == "r" && input_memMassa_I.value == "i" &&
+            input_memMassa_A.value == "a" &&
+
+            input_memMassa_D.value == "d" && input_memMassa_E2.value == "e" &&
+
+            input_memMassa_M3.value == "m" &&
+            input_memMassa_A2.value == "a" &&
+            input_memMassa_S.value == "s" &&
+            input_memMassa_S2.value == "s" &&
+            input_memMassa_A3.value == "a");
+
+            // 9 - "DMA"
+            var validacao_9 = (input_DMA_D.value == "d" &&
+            input_DMA_M.value == "m" &&
+            input_DMA_A.value == "a");
+
+            // 12 - "DATABUS"
+            var validacao_12 = (input_DATABUS_D.value == "d" &&
+            input_DATABUS_A.value == "a" && input_DATABUS_T.value == "t" && input_DATABUS_A.value == "a" && input_DATABUS_B.value == "b" && input_DATABUS_U.value == "u" && input_DATABUS_S.value == "s");
+
+
+        // Validações Booleanas //
+
+        if (validacao_14) {
+            //input_dualQuadCore_D.style = "background-color: green"
+            input_DMA_D.style = "background-color: green;"
+            input_dualQuadCore_U.style = "background-color: green"
+            //input_dualQuadCore_A.style = "background-color: green"
+            input_DATABUS_A.style = "background-color: green;"
+
+            input_dualQuadCore_L.style = "background-color: green"
+            
+            //input_dualQuadCore_E.style = "background-color: green"
+            input_memMassa_E2.style = "background-color: green"
+
+            input_dualQuadCore_Q.style = "background-color: green"
+            input_dualQuadCore_U2.style = "background-color: green"
+            input_dualQuadCore_A2.style = "background-color: green"
+            input_dualQuadCore_D2.style = "background-color: green"
+
+            input_dualQuadCore_C.style = "background-color: green"
+            input_dualQuadCore_O.style = "background-color: green"
+            input_dualQuadCore_R.style = "background-color: green"
+            input_dualQuadCore_E2.style = "background-color: green"
+        } else {
+            //input_dualQuadCore_D.style = "background-color: red"
+            input_DMA_D.style = "background-color: red ;"
+            input_dualQuadCore_U.style = "background-color: red"
+            input_DATABUS_A.style = "background-color: red;"
+            input_dualQuadCore_L.style = "background-color: red"
+            
+            //input_dualQuadCore_E2.style = "background-color: red"
+            input_memMassa_E2.style = "background-color: red"
+
+            input_dualQuadCore_Q.style = "background-color: red"
+            input_dualQuadCore_U2.style = "background-color: red"
+            input_dualQuadCore_A2.style = "background-color: red"
+            input_dualQuadCore_D2.style = "background-color: red"
+
+            input_dualQuadCore_C.style = "background-color: red"
+            input_dualQuadCore_O.style = "background-color: red"
+            input_dualQuadCore_R.style = "background-color: red"
+            input_dualQuadCore_E2.style = "background-color: red"
+        }
+
+        // 8 - "MEMORIA DE MASSA"
+        if (validacao_8) {
+            input_memMassa_M1.style = "background-color: green"
+            input_memMassa_E1.style = "background-color: green"
+            input_memMassa_M2.style = "background-color: green"
+            input_memMassa_O.style = "background-color: green"
+            input_memMassa_R.style = "background-color: green" 
+            input_memMassa_I.style = "background-color: green"
+            input_memMassa_A.style = "background-color: green"
+
+            input_memMassa_D.style = "background-color: green" 
+            input_memMassa_E2.style = "background-color: green"
+
+            input_memMassa_M3.style = "background-color: green"
+            input_memMassa_A2.style = "background-color: green"
+            input_memMassa_S.style = "background-color: green"
+            input_memMassa_S2.style = "background-color: green"
+            input_memMassa_A3.style = "background-color: green"
+        } else {
+            input_memMassa_M1.style = "background-color: red"
+            input_memMassa_E1.style = "background-color: red"
+            input_memMassa_M2.style = "background-color: red"
+            input_memMassa_O.style = "background-color: red"
+            input_memMassa_R.style = "background-color: red" 
+            input_memMassa_I.style = "background-color: red"
+            input_memMassa_A.style = "background-color: red"
+
+            input_memMassa_D.style = "background-color: red" 
+            input_memMassa_E2.style = "background-color: red"
+
+            input_memMassa_M3.style = "background-color: red"
+            input_memMassa_A2.style = "background-color: red"
+            input_memMassa_S.style = "background-color: red"
+            input_memMassa_S2.style = "background-color: red"
+            input_memMassa_A3.style = "background-color: red"
+        }console.log(validacao_8)
+
+        // 9 - "DMA"
+        if (validacao_9) {
+            input_DMA_D.style = "background-color: green;"
+            input_DMA_M.style = "background-color: green;"
+            input_DMA_A.style = "background-color: green;"
+        } else {
+            input_DMA_D.style = "background-color: red;"
+            input_DMA_M.style = "background-color: red;"
+            input_DMA_A.style = "background-color: red;"
+        }
+
+        // 12 - "DATABUS"
+        if (validacao_12) {
+            input_DATABUS_D.style = "background-color: green;"
+            input_DATABUS_A.style = "background-color: green;"
+            input_DATABUS_T.style = "background-color: green;"
+            input_DATABUS_A2.style = "background-color: green;"
+            input_DATABUS_B.style = "background-color: green;"
+            input_DATABUS_U.style = "background-color: green;"
+            input_DATABUS_S.style = "background-color: green;"
+        } else {
+            input_DATABUS_D.style = "background-color: red;"
+            input_DATABUS_A.style = "background-color: red;"
+            input_DATABUS_T.style = "background-color: red;"
+            input_DATABUS_A2.style = "background-color: red;"
+            input_DATABUS_B.style = "background-color: red;"
+            input_DATABUS_U.style = "background-color: red;"
+            input_DATABUS_S.style = "background-color: red;"
+
+        } console.log(validacao_12)
+    }
+
+</script>
