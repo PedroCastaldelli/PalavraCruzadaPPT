@@ -49,7 +49,8 @@
             display: flex;
             justify-content: center;
         }
-        .number{
+
+        .number {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -190,7 +191,7 @@
             <td class="stylediv"></td>
             <td class="stylediv"></td>
             <td class="stylediv"></td>
-            <td class="stylediv"><input class="quadrado"></td>
+            <td class="stylediv"><input id="iinput_ram_R" class="quadrado"></td>
             <td class="stylediv"></td>
             <td class="stylediv"></td>
             <td class="stylediv">11</td>
@@ -234,7 +235,7 @@
             <td class="stylediv"></td>
             <td class="stylediv"></td>
             <td class="stylediv"></td>
-            <td class="stylediv"><input class="quadrado"></td>
+            <td class="stylediv"><input id="input_ram_M" class="quadrado"></td>
             <td class="stylediv"></td>
             <td class="stylediv"></td>
             <td class="stylediv"><input class="quadrado"></td>
@@ -294,19 +295,20 @@
             <td class="stylediv"></td>
             <td class="stylediv"></td>
             <td class="stylediv"></td>
+            <td class="stylediv"></td>
             <td class="stylediv">16</td>
-            <td class="stylediv"><input class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
+            <td class="stylediv"><input id="input_cache_C" class="quadrado"></td>
             <td class="stylediv"><input id="input_dualQuadCore_A2" class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
+            <td class="stylediv"><input id="input_cache_C2" class="quadrado"></td>
+            <td class="stylediv"><input id="input_cache_H" class="quadrado"></td>
+            <td class="stylediv"><input id="input_cache_E" class="quadrado"></td>
             <td class="stylediv"></td>
             <td class="stylediv">6</td>
-            <td class="stylediv"><input class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
+            <td class="stylediv"><input id="input_eprom_E" class="quadrado"></td>
+            <td class="stylediv"><input id="input_eprom_P" class="quadrado"></td>
+            <td class="stylediv"><input id="input_eprom_R" class="quadrado"></td>
+            <td class="stylediv"><input id="input_eprom_O" class="quadrado"></td>
+            <td class="stylediv"><input id="input_eprom_M" class="quadrado"></td>
         </tr>
         <tr>
             <td class="stylediv"></td>
@@ -364,8 +366,8 @@
             <td class="stylediv"></td>
             <td class="stylediv">1</td>
             <td class="stylediv"><input id="input_dualQuadCore_C" class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
+            <td class="stylediv"><input id="input_CPU_P" class="quadrado"></td>
+            <td class="stylediv"><input id="input_CPU_U" class="quadrado"></td>
             <td class="stylediv"></td>
             <td class="stylediv"></td>
             <td class="stylediv"></td>
@@ -390,8 +392,8 @@
             <td class="stylediv"></td>
             <td class="stylediv"></td>
             <td class="stylediv">10</td>
-            <td class="stylediv"><input class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
+            <td class="stylediv"><input id="input_cb_C" class="quadrado"></td>
+            <td class="stylediv"><input id="input_cb_D" class="quadrado"></td>
             <td class="stylediv"></td>
             <td class="stylediv"></td>
             <td class="stylediv"></td>
@@ -413,9 +415,9 @@
             <td class="stylediv"></td>
             <td class="stylediv"></td>
             <td class="stylediv">2</td>
-            <td class="stylediv"><input class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
-            <td class="stylediv"><input class="quadrado"></td>
+            <td class="stylediv"><input id="input_Ula_U" class="quadrado"></td>
+            <td class="stylediv"><input id="input_Ula_L" class="quadrado"></td>
+            <td class="stylediv"><input id="input_Ula_A" class="quadrado"></td>
             <td class="stylediv"></td>
         </tr>
         <tr>
@@ -489,14 +491,14 @@
     </div>
     </div>
     </div>
-    
+
 </body>
 
 </html>
 <script>
     function validar() {
 
-     // Variáveis //
+        // Variáveis //
 
         var validacao_1 = (
             // input_memMassa_C.value == "C"
@@ -504,7 +506,7 @@
             input_CPU_U.value == "U"
         );
         var validacao_2 = (
-            // input_Ula_U.value == "U"
+            input_Ula_U.value == "U" &&
             input_Ula_L.value == "L" &&
             input_Ula_A.value == "A"
         );
@@ -526,15 +528,16 @@
         var validacao_4 = (
             input_ram_R.value == "R" &&
             // input_ram_A.value == "A"
+            input_memMassa_A2 == "a" &&
             input_ram_M.value == "M"
         );
-        
+
         var validacao_5 = (
             input_rom_R.value == "R" &&
             // input_rom_O.value == "O"
             input_rom_M.value == "M"
         );
-        
+
         var validacao_6 = (
             // input_eprom_E == "E" &&
             input_eprom_P.value == "P" &&
@@ -542,7 +545,7 @@
             input_eprom_O.value == "O" &&
             input_eprom_M.value == "M"
         );
-        
+
         var validacao_7 = (
             input_flash_F.value == "F" &&
             input_flash_L.value == "L" &&
@@ -572,38 +575,38 @@
             input_DMA_M.value == "m" &&
             input_DMA_A.value == "a");
 
-            var validacao_10 = (
-                input_cb_C.value == "C"
-                // input_cb_B.value == "B"
-            );
+        var validacao_10 = (
+            input_cb_C.value == "C" &&
+            input_cb_B.value == "B"
+        );
 
-            var validacao_11 = (
-                input_addressBus_A.value == "A" &&
-                input_addressBus_D.value == "D" &&
-                input_addressBus_D1.value == "D" &&
-                input_addressBus_R.value == "R" &&
-                input_addressBus_E.value == "E" &&
-                input_addressBus_S.value == "S" &&
-                input_addressBus_S1.value == "S" &&
+        var validacao_11 = (
+            input_addressBus_A.value == "A" &&
+            input_addressBus_D.value == "D" &&
+            input_addressBus_D1.value == "D" &&
+            input_addressBus_R.value == "R" &&
+            input_addressBus_E.value == "E" &&
+            input_addressBus_S.value == "S" &&
+            input_addressBus_S1.value == "S" &&
 
-                input_addressBus_B.value == "B" &&
-                input_addressBus_U.value == "U" &&
-                input_addressBus_S2.value == "S"
-            );
+            input_addressBus_B.value == "B" &&
+            input_addressBus_U.value == "U" &&
+            input_addressBus_S2.value == "S"
+        );
         // 12 - "DATABUS"
         var validacao_12 = (input_DATABUS_D.value == "d" &&
             input_DATABUS_A.value == "a" && input_DATABUS_T.value == "t" && input_DATABUS_A.value == "a" && input_DATABUS_B.value == "b" && input_DATABUS_U.value == "u" && input_DATABUS_S.value == "s");
 
-            var validacao_13 = (
-                input_i5ei7_I.value == "I" &&
-                input_i5ei7_5.value == "5" &&
-                
-                input_i5ei7_E.value == "E" &&
-                
-                input_i5ei7_I1.value == "I" &&
-                input_i5ei7_7.value == "7" &&
+        var validacao_13 = (
+            input_i5ei7_I.value == "I" &&
+            input_i5ei7_5.value == "5" &&
 
-            )
+            input_i5ei7_E.value == "E" &&
+
+            input_i5ei7_I1.value == "I" &&
+            input_i5ei7_7.value == "7"
+
+        )
 
         // 14 - "Dual e Quad Core"
         var validacao_14 = (
@@ -628,20 +631,21 @@
 
         //15 - "Threads"
         var validacao_15 = (
-            input_threads_T.value == "t" && 
-            input_threads_H.value == "h" && 
-            input_threads_R.value == "r" && 
+            input_threads_T.value == "t" &&
+            input_threads_H.value == "h" &&
+            input_threads_R.value == "r" &&
             //input_threads_E.value == "e" &&
 
             input_dualQuadCore_E.value == "e" &&
-            input_threads_A.value == "a" && 
-            input_threads_D.value == "d" && 
+            input_threads_A.value == "a" &&
+            input_threads_D.value == "d" &&
             input_threads_S.value == "s"
         )
 
         var validacao_16 = (
             input_cache_C.value == "C" &&
-            // input_cache_A.value == "A" &&
+           // input_cache_A.value == "A" &&
+            input_dualQuadCore_A2 == "a" &&
             input_cache_C2.value == "C" &&
             input_cache_H.value == "H" &&
             input_cache_E.value == "E"
@@ -650,6 +654,76 @@
 
 
         // Validações Booleanas //
+
+        if (validacao_2) {
+            input_Ula_U.style = "backgroud-color: green;"
+            input_Ula_L.style = "backgroud-color: green;"
+            input_Ula_A.style = "backgroud-color: green;"
+        } else {
+            input_Ula_U.style = "backgroud-color: red;"
+            input_Ula_L.style = "backgroud-color: red;"
+            input_Ula_A.style = "backgroud-color: red;"
+        }
+
+        if (validacao_1) {
+            //input_CPU_P.style = "backgroud-color: green;"
+            input_dualQuadCore_C.style = "backgroud-color: green;"
+            input_CPU_P.style = "backgroud-color: green;"
+            input_CPU_U.style = "backgroud-color: green;"
+        } else {
+            //input_CPU_P.style = "backgroud-color: green;"
+            input_dualQuadCore_C.style = "backgroud-color: red;"
+            input_CPU_P.style = "backgroud-color: red;"
+            input_CPU_U.style = "backgroud-color: red;"
+        }
+
+        if (validacao_4) {
+            input_ram_R.style = "backgroud-color: green;"
+            //input_ram_A.style = "backgroud-color: green;"
+            input_memMassa_A2.style = "backgroud-color: green;"
+            input_ram_M.style = "backgroud-color: green;"
+        } else {
+            input_ram_R.style = "backgroud-color: red;"
+            //input_ram_A.style = "backgroud-color: red;"
+            input_memMassa_A2.style = "backgroud-color: red;"
+            input_ram_M.style = "backgroud-color: red;"
+        }
+
+        if (validacao_10) {
+            input_cb_C.value.style = "backgroud-color: green;"
+            input_cb_D.value.style = "backgroud-color: green;"
+        } else {
+            input_cb_C.value.style = "backgroud-color: red;"
+            input_cb_D.value.style = "backgroud-color: red;"
+        }
+
+        if (validacao_6) {
+            input_eprom_E.style = "backgroud-color: green;"
+            input_eprom_P.style = "backgroud-color: green;"
+            input_eprom_R.style = "backgroud-color: green;"
+            input_eprom_O.style = "backgroud-color: green;"
+            input_eprom_M.style = "backgroud-color: green;"
+        } else {
+            input_eprom_E.style = "backgroud-color: red;"
+            input_eprom_P.style = "backgroud-color: red;"
+            input_eprom_R.style = "backgroud-color: red;"
+            input_eprom_O.style = "backgroud-color: red;"
+            input_eprom_M.style = "backgroud-color: red;"
+        }
+
+        if (validacao_16) {
+            input_cache_C.style = "backgroud-color: green;"
+            input_dualQuadCore_A2.style = "backgroud-color: green;"
+            input_cache_C2.style = "backgroud-color: green;"
+            input_cache_H.style = "backgroud-color: green;"
+            input_cache_E.style = "backgroud-color: green;"
+        } else {
+            input_cache_C.style = "backgroud-color: red;"
+            input_dualQuadCore_C.style = "backgroud-color: red;"
+            input_cache_C2.style = "backgroud-color: red;"
+            input_cache_H.style = "backgroud-color: red;"
+            input_cache_E.style = "backgroud-color: red;"
+        }
 
         if (validacao_15) {
             input_threads_T.style = "backgroud-color: green;"
