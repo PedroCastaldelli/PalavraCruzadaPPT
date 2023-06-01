@@ -496,46 +496,64 @@
 <script>
     function validar() {
 
-        // Variáveis //
+     // Variáveis //
 
-        //15 - "Threads"
-        var validacao_15 = (
-            input_threads_T.value == "t" && 
-            input_threads_H.value == "h" && 
-            input_threads_R.value == "r" && 
-            //input_threads_E.value == "e" &&
-
-            input_dualQuadCore_E.value == "e" &&
-            input_threads_A.value == "a" && 
-            input_threads_D.value == "d" && 
-            input_threads_S.value == "s"
-        )
-
-        // 14 - "Dual e Quad Core"
-        var validacao_14 = (
-            //input_dualQuadCore_D.value == "d" &&
-            input_dualQuadCore_U.value == "u" &&
-            //input_dualQuadCore_A.value == "a" &&
-            input_dualQuadCore_L.value == "l" &&
-
-            //input_dualQuadCore_E.value == "e" &&
-            input_memMassa_E.value == "e" &&
-
-            input_dualQuadCore_Q.value == "q" &&
-            input_dualQuadCore_U2.value == "u" &&
-            input_dualQuadCore_A2.value == "a" &&
-            input_dualQuadCore_D2.value == "d" &&
-
-            input_dualQuadCore_C.value == "c" &&
-            input_dualQuadCore_O.value == "o" &&
-            input_dualQuadCore_R.value == "r" &&
-            input_dualQuadCore_E.value == "e"
-        )
-
+        var validacao_1 = (
+            // input_memMassa_C.value == "C"
+            input_CPU_P.value == "P" &&
+            input_CPU_U.value == "U"
+        );
+        var validacao_2 = (
+            // input_Ula_U.value == "U"
+            input_Ula_L.value == "L" &&
+            input_Ula_A.value == "A"
+        );
+        var validacao_3 = (
+            input_registradores_R.value == "R" &&
+            // input_registradores_E.value == "E"
+            input_registradores_G.value == "G" &&
+            input_registradores_I.value == "I" &&
+            input_registradores_S.value == "S" &&
+            input_registradores_T.value == "T" &&
+            input_registradores_R2.value == "R" &&
+            input_registradores_A.value == "A" &&
+            input_registradores_D.value == "D" &&
+            input_registradores_O.value == "O" &&
+            input_registradores_R3.value == "R" &&
+            input_registradores_E.value == "E" &&
+            input_registradores_S.value == "S"
+        );
+        var validacao_4 = (
+            input_ram_R.value == "R" &&
+            // input_ram_A.value == "A"
+            input_ram_M.value == "M"
+        );
+        
+        var validacao_5 = (
+            input_rom_R.value == "R" &&
+            // input_rom_O.value == "O"
+            input_rom_M.value == "M"
+        );
+        
+        var validacao_6 = (
+            // input_eprom_E == "E" &&
+            input_eprom_P.value == "P" &&
+            input_eprom_R.value == "R" &&
+            input_eprom_O.value == "O" &&
+            input_eprom_M.value == "M"
+        );
+        
+        var validacao_7 = (
+            input_flash_F.value == "F" &&
+            input_flash_L.value == "L" &&
+            input_flash_A.value == "A" &&
+            // input_flash_S.value == "S" &&
+            input_flash_H.value == "H"
+        );
         // 8 - "MEMORIA DE MASSA"
         var validacao_8 = (
-            input_memMassa_M.value == "m" &&
-            input_memMassa_E.value == "e" &&
+            input_memMassa_M1.value == "m" &&
+            input_memMassa_E1.value == "e" &&
             input_memMassa_M2.value == "m" &&
             input_memMassa_O.value == "o" &&
             input_memMassa_R.value == "r" && input_memMassa_I.value == "i" &&
@@ -554,9 +572,81 @@
             input_DMA_M.value == "m" &&
             input_DMA_A.value == "a");
 
+            var validacao_10 = (
+                input_cb_C.value == "C"
+                // input_cb_B.value == "B"
+            );
+
+            var validacao_11 = (
+                input_addressBus_A.value == "A" &&
+                input_addressBus_D.value == "D" &&
+                input_addressBus_D1.value == "D" &&
+                input_addressBus_R.value == "R" &&
+                input_addressBus_E.value == "E" &&
+                input_addressBus_S.value == "S" &&
+                input_addressBus_S1.value == "S" &&
+
+                input_addressBus_B.value == "B" &&
+                input_addressBus_U.value == "U" &&
+                input_addressBus_S2.value == "S"
+            );
         // 12 - "DATABUS"
         var validacao_12 = (input_DATABUS_D.value == "d" &&
             input_DATABUS_A.value == "a" && input_DATABUS_T.value == "t" && input_DATABUS_A.value == "a" && input_DATABUS_B.value == "b" && input_DATABUS_U.value == "u" && input_DATABUS_S.value == "s");
+
+            var validacao_13 = (
+                input_i5ei7_I.value == "I" &&
+                input_i5ei7_5.value == "5" &&
+                
+                input_i5ei7_E.value == "E" &&
+                
+                input_i5ei7_I1.value == "I" &&
+                input_i5ei7_7.value == "7" &&
+
+            )
+
+        // 14 - "Dual e Quad Core"
+        var validacao_14 = (
+            //input_dualQuadCore_D.value == "d" &&
+            input_dualQuadCore_U.value == "u" &&
+            //input_dualQuadCore_A.value == "a" &&
+            input_dualQuadCore_L.value == "l" &&
+
+            //input_dualQuadCore_E.value == "e" &&
+            input_memMassa_E2.value == "e" &&
+
+            input_dualQuadCore_Q.value == "q" &&
+            input_dualQuadCore_U2.value == "u" &&
+            input_dualQuadCore_A2.value == "a" &&
+            input_dualQuadCore_D2.value == "d" &&
+
+            input_dualQuadCore_C.value == "c" &&
+            input_dualQuadCore_O.value == "o" &&
+            input_dualQuadCore_R.value == "r" &&
+            input_dualQuadCore_E2.value == "e"
+        )
+
+        //15 - "Threads"
+        var validacao_15 = (
+            input_threads_T.value == "t" && 
+            input_threads_H.value == "h" && 
+            input_threads_R.value == "r" && 
+            //input_threads_E.value == "e" &&
+
+            input_dualQuadCore_E.value == "e" &&
+            input_threads_A.value == "a" && 
+            input_threads_D.value == "d" && 
+            input_threads_S.value == "s"
+        )
+
+        var validacao_16 = (
+            input_cache_C.value == "C" &&
+            // input_cache_A.value == "A" &&
+            input_cache_C2.value == "C" &&
+            input_cache_H.value == "H" &&
+            input_cache_E.value == "E"
+
+        )
 
 
         // Validações Booleanas //
